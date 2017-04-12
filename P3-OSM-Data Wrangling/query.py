@@ -1,23 +1,23 @@
 
 # coding: utf-8
 
-# In[7]:
+# In[8]:
 
 import csv, sqlite3
 
-def number_of_nodes():
+def nodes():
     result = cur.execute('SELECT COUNT(*) FROM NODES')
     return result.fetchone()[0]
 
-def number_of_ways():
+def ways():
     result = cur.execute('SELECT COUNT(*) FROM WAYS')
     return result.fetchone()[0]
 
-def number_of_unique_users():
+def unique_users():
     result = cur.execute('SELECT COUNT(DISTINCT(United.UID))             FROM (SELECT UID FROM NODES UNION ALL SELECT UID FROM WAYS)United')
     return result.fetchone()[0]
     
-def top_contributing_users():
+def top_users():
     users = []
     for row in cur.execute('SELECT United.User,count(*)as num             FROM (SELECT UID,User FROM NODES UNION ALL SELECT UID,User FROM WAYS)United             GROUP BY United.UID             ORDER BY NUM DESC             LIMIT 10'):
         users.append(row)
@@ -50,10 +50,10 @@ if __name__ == '__main__':
     con = sqlite3.connect("Vidyaranyapura.db")
     cur = con.cursor()
 
-    print "Number of nodes: " , number_of_nodes()
-    print "Number of ways: " , number_of_ways()
-    print "Number of unique users: " , number_of_unique_users()
-    print "Top contributing users: " , top_contributing_users()
+    print "# of nodes: " , nodes()
+    print "# of ways: " , ways()
+    print "# of unique users: " , unique_users()
+    print "Top  users: " , top_users()
     print "Average Contriution per user: " , Avg_contribution()
     print "Common ammenities: " , common_ammenities()
     print "Popular Banks: " , popular_bank()
