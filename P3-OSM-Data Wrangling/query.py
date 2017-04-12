@@ -33,7 +33,7 @@ def Avg_contribution():
                          GROUP BY United.UID)grouped')
     return result.fetchone()[0]
 
-def common_ammenities():
+def common_amenities():
     amenities = []
     for row in cur.execute('SELECT value,count(*) as num FROM Node_tags \
                             WHERE key= "amenity" GROUP BY valueORDER by num desc\
@@ -73,7 +73,7 @@ if __name__ == '__main__':
     print "# of unique users: " , unique_users()
     print "Top  users: " , top_users()
     print "Average Contriution per user: " , Avg_contribution()
-    print "Common ammenities: " , common_ammenities()
+    print "Common amenities: " , common_amenities()
     print "Popular Banks: " , popular_bank()
     print "Popular cuisines: " , popular_cuisines()
 
