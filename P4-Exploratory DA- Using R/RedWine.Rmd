@@ -1,10 +1,13 @@
 ---
-title: "REDWINE ANALYSIS by MAHALAKSHMI"
-output: html_document
+title: "REDWINE ANALYSIS"
+author: "MAHALAKSHMI"
+output: 
+  html_document: 
+    keep_md: yes
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r setup, include=FALSE,cache=FALSE}
+knitr::opts_chunk$set(echo = TRUE,error=TRUE)
 ```
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, packages}
