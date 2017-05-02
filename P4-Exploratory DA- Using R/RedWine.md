@@ -11,7 +11,7 @@ It has 1599 wines listed with 11 attributes
 
 
 
-#UNIVARIATE PLOT SECTION
+# UNIVARIATE PLOT SECTION
 The individual columns(attributes) are analysed using various geometric graphs to get some idea on thier distribution.
 Checking the Distribution of the quality (response variable) of the listed wines.
 
@@ -23,7 +23,7 @@ Checking the Distribution of the quality (response variable) of the listed wines
 ```
 From the summary values and the plot it is observed that the values vary from 3-8 on the quality parameter hence the limits have been set accordingly
 
-###UNIVARIATE PLOTS FOR PREDICTOR VARIABLES
+### UNIVARIATE PLOTS FOR PREDICTOR VARIABLES
 citric.acid - from the table it can be seen that there are quite  lot of 0's and a entry with 1(probably an outlier)
 ![](RedWine_files/figure-html/UNI_PREDICTOR-1.png)<!-- -->
 
@@ -41,12 +41,12 @@ Plot for pHValue- shows a  near normal distribution
 
 ![](RedWine_files/figure-html/pH-1.png)<!-- -->
 
-###CHECKING OUT OTHER VARIABLES USING PLOTS
+### CHECKING OUT OTHER VARIABLES USING PLOTS
 Below are the plots of multiple predictor variables(acidity,sulpahtes,alcohol,residual.sugar,chlorides,density,total SO2) in a single plot area using  grid.arrange
 ![](RedWine_files/figure-html/PLOTTING_PREDICTOR_VARIABLES-1.png)<!-- -->
 
 
-#UNIVARIATE ANALYSIS:
+# UNIVARIATE ANALYSIS:
 The attribute names,structure of the data base is as below
 
 ```
@@ -77,7 +77,7 @@ The attribute names,structure of the data base is as below
 ```
 ## [1] 1599
 ```
-###OBJECTIVE 
+### OBJECTIVE 
 
 The primary objective of the analysis is to find out how the quality of the wine varies w.r.t various properties
 
@@ -90,7 +90,7 @@ Response variable quality is a categorical variable with factors 1 to 10 with 1 
 
 OBSERVATION - there are no NA values for any of the variables
 
-###Initial work on derived variables
+### Initial work on derived variables
 From certain references we can calculate the total acidity based on the  sum of fixed acidity and volatile acidity
 and also the Bound or fixed Sulphur dioxide from the difference of total and free Sulphur dioxide.
 The usefulness of the derived variables will be explored further
@@ -104,7 +104,7 @@ Based on the above we can scale some variables using   the transformations(log o
 ![](RedWine_files/figure-html/LOG_TRANSFORMS-1.png)<!-- -->
 Setting the limits and the tranformation seem to help in normalising the distribution to adjust the skewness and we can check below if the same results in a better f-statistic
 
-##BIVARIATE PLOT SECTION:
+# BIVARIATE PLOT SECTION
 We can check the co relation between 2 variable using the Pearsons corelation and also thorugh graphs.
 AS per certain internet resources, there are some co-relations between 
 1.acidity fo the wine and pH value
@@ -158,7 +158,7 @@ From the above we can see that the fixed acidity has a higher corelation  impact
 From the above graph we can see a might inverse corelation between the fixed.Acidity and the pH value which is again not very strong as seen in the r value of -.68 ( just above the 0.5 threshold).
 However the Volatile.acidity does not show any  corelation with the pHvalue
 
-###Checking the relationship between quality and SO2 values
+### Checking the relationship between quality and SO2 values
 Based on some of the studies the proportion of free.sulphur.dioxide/bound.sulfur.dioxide determines the quality of the wine.
 
 Reference:http://www.morethanorganic.com/sulphur-in-the-bottle
@@ -180,7 +180,7 @@ Crosschecking the inference from the above graph
 ```
 It can be observed from the above result and the box plots that the propotion of free.Sulfur.dioxide has not impacted the quality rating of the experts
 
-###Analysing Sulphur Dioxide content
+### Analysing Sulphur Dioxide content
 Higher SO2 content becomes evident in taste and smell beyond 50 ppm.
 Checking the summary statistic it is evident there are some outliers with values of 289 since the 3rd quartile value itself is 62 only.
 
@@ -241,7 +241,7 @@ The sulphates(Potassium metabisulphate) attribute is present in the form of gm/d
 ## -0.1837618
 ```
 
-###Checking the corelation between Alcohol level and quality
+### Checking the corelation between Alcohol level and quality
 ![](RedWine_files/figure-html/ALCOHOL_QUALITY-1.png)<!-- -->
 As per the above it is evident that there exists a positive corelation between the alcohol value and quality which is also confirmed by the pearson's r value of 0.476(near about 0.5)
 
@@ -277,7 +277,7 @@ Here Iam trying to bucket the pH range into 2 levels to see if we can observe an
 It can be seen from the above table that there exits  a marginal difference in the Proportion of highPH wines in each quality group with the lower rated wines having a slightly higher proportion of highpH wines as against the top rates ones.
 This also verifies the fact that wines with a pH under 3.4 are supposed to be  of good quality 
 
-###Relation between pH and density
+### Relation between pH and density
 
 
 ![](RedWine_files/figure-html/pH_Density-1.png)<!-- -->
@@ -301,7 +301,7 @@ Since the citric acid is part of acidity we can check if there exists a direct c
 ![](RedWine_files/figure-html/Citric_Acid_Fixed_acidity-1.png)<!-- -->
 The above shows a positive corelation between citric acid and fixed acidity.
 
-#BI-VARIATE ANALYSIS
+# BI-VARIATE ANALYSIS
 Some of the relationships explored in the above section are
 *CitricAcid and Fixed acidity
 *pH and Acidity
@@ -315,7 +315,7 @@ However there were certain instances like the proportion of Free So2 versus qual
 some of the strongest relations are observed between pH and fixed acidity,Alcohol and quality,citric acid and fixed acidity
 
 
-#MULTIVARIATE PLOT SECTION:
+# MULTIVARIATE PLOT SECTION
 
 From the above analysis we can see that there exists a relation between citric acid value and fixed acidity and the same is analysed with quality
 
@@ -339,7 +339,7 @@ Also the slight increasing trend show the positive corealtion between citric aci
 ```
 The observation from the graph is again reinstated showing a better perceived qualtiy with a positive corelation with citric acid
 
-###EXAMININING THE ACIDITY ,  QUALITY AND DENSITY
+### EXAMININING THE ACIDITY ,  QUALITY AND DENSITY
 
 ![](RedWine_files/figure-html/ACIDITY_QUALITY_DENSITY-1.png)<!-- -->
 
@@ -385,7 +385,7 @@ fixed.acidity -pH
 fixed.acidity-density
 alcohol-density-quality
 
-###Checking relation between alcohol Density and quality
+### Checking relation between alcohol Density and quality
 ![](RedWine_files/figure-html/ALCOHOL_DENSITY_QUALITY-1.png)<!-- -->
 The above graph shows the inverse corelation between alcohol and density and also the positive corelation between alcohol content and quality With higher quality wines occupying the top of the mean line.
 
@@ -536,34 +536,34 @@ There have been really surprising corelations that can be observed from the plot
 The model was initially built using all the variables and was further tuned to consider only the significant variables.
 Limitations:The training :test ratio for building the model was 90%:10%  since the number of data points were limited.Hence there is a possibility of overfitting in the data
 
-#FINAL PLOTS AND SUMMARY
+# FINAL PLOTS AND SUMMARY
 Below are some of the final plots chosen which provide significant relationship among the variables.
 
-###Plot One
+### Plot One
 SO2 and Quality
 ![](RedWine_files/figure-html/Plot1-1.png)<!-- -->
-###Description 1:
+### Description 1:
 The above plot shows the clear realtion between Total SO2 Content(y axis) and Quality(X axis).The higher the SO2 content the lower is the rated quality.
 So2 is used a  necessary preservative however at higher levels it affects the taste and emits a not so good smell bringing down the  quality
 
-###Plot Two
+### Plot Two
 Acidity and citric Acid and Quality
 ![](RedWine_files/figure-html/Plot2-1.png)<!-- -->
 
-###Description 2:
+### Description 2:
 Citric acid(X-axis) has a positive corelation with fixed acidity(y-axis) since it is a part of acidity value.
 Just a casual observation will lead to make us believe that the better quality wines have a higher fixed acidity ,but this is mostly because of a higher citric acid presence with most of the high rated wines having a citric acid content of over 0.27 
 
 
-###Plot 3
+### Plot 3
 Alcohol -Density-Quality
 ![](RedWine_files/figure-html/Plot3-1.png)<!-- -->
 
-###Description 3:
+### Description 3:
 The above plot shows the realtionship between alcohol(y axis) ,density(x axix) and quality(3rd dimension in coloured points)
 We can  see a inverse relation between alcohol and density and also a positive corelation between higher quality and higher alcohol content can be observed which indicates that most of the highly rated alcohols had a higher alcohol content.
 
-#REFLECTION
+# REFLECTION
 The Data set was fairly small with a limited set of attributes.
 The dataset is quite clean which was easy in getting started with the analysis.
 
