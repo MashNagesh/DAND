@@ -7,9 +7,11 @@ MAHALAKSHMI
 
 ### Loading the Dataset
 
-Loading the dataset and observing the basic structure ,column names to get a basic understanding of the dataset.The dataset chosen for exploratory data analysis wineQualityReds.csv.
+Loading the dataset and observing the basic structure ,column names to get a 
+basic understanding of the dataset.The dataset chosen for exploratory data analysis wineQualityReds.csv.
 
-It has 1599 wines listed with 11 attributes.The attribute names,structure of the data base is as below
+It has 1599 wines listed with 11 attributes.The attribute names,structure of 
+the data base is as below
 
 
 ```
@@ -50,7 +52,8 @@ It has 1599 wines listed with 11 attributes.The attribute names,structure of the
 
 ### OBJECTIVE 
 
-The primary objective of the analysis is to find out how the quality of the wine varies w.r.t various properties
+The primary objective of the analysis is to find out how the quality of the 
+wine varies w.r.t various properties
 
 Response Variable - quality
 Predictor Variables - acidity(2),citric acid,residual sugar,chlorides,sulphur dioxide(2),density,pH,sulphates,alcohol
@@ -63,16 +66,20 @@ OBSERVATION - there are no NA values for any of the variables
 
 # UNIVARIATE PLOT SECTION
 
-The individual columns(attributes) are analysed using various geometric graphs to get some idea on their distribution.
-Checking the Distribution of the quality (response variable) of the listed wines.
+The individual columns(attributes) are analysed using various geometric graphs 
+to get some idea on their distribution.
+Checking the Distribution of the quality (response variable) of the listed 
+wines.
 
 ![](RedWine-v1_files/figure-html/BASICBARUNI-1.png)<!-- -->
 
-From the summary values and the plot it is observed that the values vary from 3-8 on the quality parameter.
+From the summary values and the plot it is observed that the values vary from 
+3-8 on the quality parameter.
 
 ### UNIVARIATE PLOTS FOR PREDICTOR VARIABLES
 
-*citric.acid - from the table it can be seen that there are quite  lot of 0's and a entry with 1(probably an outlier)
+*citric.acid - from the table it can be seen that there are quite  lot of 0's 
+and a entry with 1(probably an outlier)
 
 ![](RedWine-v1_files/figure-html/CITRIC-1.png)<!-- -->
 
@@ -95,7 +102,8 @@ From the summary values and the plot it is observed that the values vary from 3-
 
 ![](RedWine-v1_files/figure-html/FIXED ACIDITY-1.png)<!-- -->
 
-The above box plot shows a median of around 8 with some outlier data going upto 16 with a near normal distribution
+The above box plot shows a median of around 8 with some outlier data going upto 
+16 with a near normal distribution
 
 *Volaile Acidity
 
@@ -117,7 +125,8 @@ The logarithmic transformation to the sulphates renders a much normalised distri
 
 ![](RedWine-v1_files/figure-html/ALCOHOL-1.png)<!-- -->
 
-Alcohol looks like yet another case of a positively skewed distribution with some big peaks between 8-10
+Alcohol looks like yet another case of a positively skewed distribution with 
+some big peaks between 8-10
 
 ![](RedWine-v1_files/figure-html/SUGAR-1.png)<!-- -->
 
@@ -165,7 +174,8 @@ Applying transformation
 ### Initial work on derived variables
 
 From certain references we can calculate the total acidity based on the  sum of fixed acidity and volatile acidity
-and also the Bound or fixed Sulphur dioxide from the difference of total and free Sulphur dioxide.
+and also the Bound or fixed Sulphur dioxide from the difference of total and 
+free Sulphur dioxide.
 The usefulness of the derived variables will be explored further
 
 
@@ -173,13 +183,16 @@ The usefulness of the derived variables will be explored further
 
 ### Transformation of certain variables
 
-Some of the variables like Total SO2,Sulphates,Chlorides and residual sugar seem to have a skewed distribution.By setting the limits or by using transformations we can normalise the same as depicted above
+Some of the variables like Total SO2,Sulphates,Chlorides and residual sugar seem to have a skewed distribution.By setting the limits or by using transformations 
+we can normalise the same as depicted above
 
-Setting the limits and the tranformation seem to help in normalising the distribution to adjust the skewness and we can check below if the same results in a better f-statistic
+Setting the limits and the tranformation seem to help in normalising the distribution to adjust the skewness and we can check below if the same results 
+in a better f-statistic
 
 # BIVARIATE PLOT SECTION
 
-We can check the co relation between 2 variable using the Pearsons corelation and also thorugh graphs.
+We can check the co relation between 2 variable using the Pearsons corelation 
+and also thorugh graphs.
 
 ### CORELATION MATRIX TO CHECK THE INTERACTION AMONG THE ATTRIBUTES
 
@@ -252,7 +265,8 @@ It can be observed from the above result and the box plots that the propotion of
 ##  10  53 681 638 199  18
 ```
 
-If we cut the outliers and consider only the middle 75% of the readings of quality
+If we cut the outliers and consider only the middle 75% of the readings of 
+quality
 there seems to be a significant corelation between the SO2 content and quality rating
 
 Plotting against the subsets
@@ -264,8 +278,11 @@ The subset shows a inverse relation between SO2 and Quality.
 
 ***OBSERVATION -
 
-Based on the various wine resources the sulphates/sulphites value of a wine is the total SO2 value of the wine.However for this data set there exists a separate variable sulphates which is on the basis of pottasium sulphate content.However this can release SO2 gas.
-The sulphates(Potassium metabisulphate) attribute is present in the form of gm/dm^3.Hence converting it to mg/dm3 to check if it has any significant impact on the quality when combined with the total.sulphur.dioxide
+Based on the various wine resources the sulphates/sulphites value of a wine is 
+the total SO2 value of the wine.However for this data set there exists a 
+separate variable sulphates which is on the basis of pottasium sulphate content.However this can release SO2 gas.
+The sulphates(Potassium metabisulphate) attribute is present in the form of gm/dm^3.Hence converting it to mg/dm3 to check if it has any significant impact 
+on the quality when combined with the total.sulphur.dioxide
 
 ![](RedWine-v1_files/figure-html/SULPHATES_QUAL-1.png)<!-- -->
 
@@ -275,12 +292,22 @@ Looks like a positive co-relation between sulphates and quality.
 
 ![](RedWine-v1_files/figure-html/ALCOHOL_QUALITY-1.png)<!-- -->
 
-As per the above it is evident that there exists a positive corelation between the alcohol value and quality which is also confirmed by the pearson's r value of 0.476(near about 0.5)
+```
+## geom_point: na.rm = FALSE
+## stat_summary: fun.data = NULL, fun.y = function (x, ...) 
+## UseMethod("mean"), fun.ymax = NULL, fun.ymin = NULL, fun.args = list(), na.rm = FALSE
+## position_identity
+```
+
+As per the above it is evident that there exists a positive corelation between 
+the alcohol value and quality which is also confirmed by the pearson's r value 
+of 0.476(near about 0.5)
 
 ### pH and Quality in a wine
 
 As per expert research good quality red wines are normally within a pH range of 3.4
-Here Iam trying to bucket the pH range into 2 levels to see if we can observe any significant relation
+Here Iam trying to bucket the pH range into 2 levels to see if we can observe 
+any significant relation
 
 
 
@@ -307,8 +334,11 @@ Here Iam trying to bucket the pH range into 2 levels to see if we can observe an
 ## 6       8    14      4       0.22
 ```
 
-It can be seen from the above table that there exits  a marginal difference in the Proportion of highPH wines in each quality group with the lower rated wines having a slightly higher proportion of highpH wines as against the top rates ones.
-This also verifies the fact that wines with a pH under 3.4 are supposed to be  of good quality 
+It can be seen from the above table that there exits  a marginal difference in 
+the Proportion of highPH wines in each quality group with the lower rated wines having a slightly higher proportion of highpH wines as against the top rates 
+ones.
+This also verifies the fact that wines with a pH under 3.4 are supposed to be  
+of good quality 
 
 ### Relation between Fixed acidity and density
 
@@ -354,7 +384,8 @@ From the above analysis we can see that there exists a relation between citric a
 
 
 This shows that as the citric acid content increases there is a percieved better quality in the wine.
-Also the slight increasing trend show the positive corealtion between citric acid and fixed acidity
+Also the slight increasing trend show the positive corealtion between citric 
+acid and fixed acidity
 
 
 ```
@@ -400,7 +431,8 @@ If we look at the same using the mean function from the tables, the relationship
 
 ![](RedWine-v1_files/figure-html/ALCOHOL_DENSITY_QUALITY-1.png)<!-- -->
 
-The above graph shows the inverse corelation between alcohol and density and also the positive corelation between alcohol content and quality With higher quality wines occupying the top of the mean line.
+The above graph shows the inverse corelation between alcohol and density and 
+also the positive corelation between alcohol content and quality With higher quality wines occupying the top of the mean line.
 
 ## BUILDING  LINEAR MODEL
 
@@ -471,7 +503,8 @@ Using the lm command to fit a linear model to the data
 
 ## TEST AND TRAINING DATA
 
-The Training set :Test Set has been split at 90:10 since the dataset is relatively small
+The Training set :Test Set has been split at 90:10 since the dataset is 
+relatively small
 
 
 ```
@@ -507,7 +540,8 @@ The Training set :Test Set has been split at 90:10 since the dataset is relative
 ![](RedWine-v1_files/figure-html/RESIDUAL PLOT-1.png)<!-- -->![](RedWine-v1_files/figure-html/RESIDUAL PLOT-2.png)<!-- -->![](RedWine-v1_files/figure-html/RESIDUAL PLOT-3.png)<!-- -->![](RedWine-v1_files/figure-html/RESIDUAL PLOT-4.png)<!-- -->
 
 
-From the plot 2 we can see that the observation lie around the 45 degree line and hence we can assume that the normality holds true in this case.
+From the plot 2 we can see that the observation lie around the 45 degree line 
+and hence we can assume that the normality holds true in this case.
 
 
 ## PREDICTION using test data
@@ -523,11 +557,16 @@ From the plot 2 we can see that the observation lie around the 45 degree line an
 
 # MULTI-VARIATE ANALYSIS
 
- The analysis are inferences from each of the plot segment is mentioned under the plot.Also a Linear model has been built based on the data provided.
-There have been really surprising corelations that can be observed from the plots and from the significance indicated in the model.The density,residula sugar  and fixed acidity do not seem to play an important role in determinig the quality however the exploratory data did show some relation
+ The analysis are inferences from each of the plot segment is mentioned under 
+ the plot.Also a Linear model has been built based on the data provided.
+There have been really surprising corelations that can be observed from the 
+plots and from the significance indicated in the model.The density,residula 
+sugar  and fixed acidity do not seem to play an important role in determinig the quality however the exploratory data did show some relation
 
 The model was initially built using all the variables and was further tuned to consider only the significant variables.
-Limitations:The training :test ratio for building the model was 90%:10%  since the number of data points were limited.Hence there is a possibility of overfitting in the data
+Limitations:The training :test ratio for building the model was 90%:10%  since 
+the number of data points were limited.Hence there is a possibility of 
+overfitting in the data
 
 # FINAL PLOTS AND SUMMARY
 
@@ -552,8 +591,11 @@ Acidity and citric Acid and Quality
 
 ### Description 2:
 
-Citric acid(X-axis) has a positive corelation with fixed acidity(y-axis) since it is a part of acidity value.
-Just a casual observation will lead to make us believe that the better quality wines have a higher fixed acidity ,but this is mostly because of a higher citric acid presence with most of the high rated wines having a citric acid content of over 0.27 
+Citric acid(X-axis) has a positive corelation with fixed acidity(y-axis) since 
+it is a part of acidity value.
+Just a casual observation will lead to make us believe that the better quality wines have a higher fixed acidity ,but this is mostly because of a higher citric acid presence with most of the high rated wines having a citric acid content of over 0.27.WE can see that the regression lines of the higher quality wines have a higher slope showing the increase in citric acid content and fixed acidity for better quality wines.
+The same is cooroborated  above using table values
+
 
 
 ### Plot 3
@@ -565,8 +607,11 @@ Alcohol -Density-Quality
 
 ### Description 3:
 
-The above plot shows the realtionship between alcohol(y axis) ,density(x axix) and quality(3rd dimension in coloured points)
-We can  see a inverse relation between alcohol and density and also a positive corelation between higher quality and higher alcohol content can be observed which indicates that most of the highly rated alcohols had a higher alcohol content.
+The above plot shows the realtionship between alcohol(y axis) ,density(x axix) 
+and quality(3rd dimension in coloured points)
+We can  see a inverse relation between alcohol and density and also a positive corelation between higher quality and higher alcohol content can be observed 
+which indicates that most of the highly rated alcohols had a higher alcohol content.The regression lines of the higher quality wines clearly occupy the top
+portion of the chart area indicating a realtively higher alcohol content.
 
 # REFLECTION
 
@@ -576,10 +621,12 @@ The dataset is quite clean which was easy in getting started with the analysis.
 Surprise points:
 There were some variables(citric acid and acidity) for which the  corelation number did not reveal much but plotting them in a graph could bring in the relationship.
 
-There were some variables(acidity/density) which seemed to have a relationship to the quality but were considered insignificant in the linear model
+There were some variables(acidity/density) which seemed to have a relationship 
+to the quality but were considered insignificant in the linear model
 
 Some struggles/Limitations:
--The data set was fairly small and also the samples for quality rating of 3 and 8 were too less so the presence in the point graphs could not be felt to make appropriate conclusions and more dependency was on quality grade of 4-7 which is mostly hovering around the mean quality.
+-The data set was fairly small and also the samples for quality rating of 3 and 
+8 were too less so the presence in the point graphs could not be felt to make appropriate conclusions and more dependency was on quality grade of 4-7 which is mostly hovering around the mean quality.
 
 - On the multivariate plots,plotting the variable was ok but deriving meaningful inference was a bit difficult
 
@@ -587,6 +634,7 @@ Some struggles/Limitations:
 
 Future Possible explorations:
 New features can be formed based on the realtionship and interaction between the variables like(citric acid and acidity) or pH and acidity or sulpahtes and SO2 -how each of the variable is dependent upon the other and the rate a which it is affected.
-This would in turn help fine tuning the linear model for a better fit to the data.
+This would in turn help fine tuning the linear model for a better fit to the 
+data.
 
 
