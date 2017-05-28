@@ -1,0 +1,15 @@
+https://stackoverflow.com/questions/6130768/return-none-if-dictionary-key-is-not-available
+https://docs.scipy.org/doc/numpy/reference/generated/numpy.nan_to_num.html
+https://plot.ly/matplotlib/scatter/
+https://stackoverflow.com/questions/10761429/how-to-modify-2d-scatterplot-to-display-color-based-off-third-array-in-csv-file
+https://stackoverflow.com/questions/21338090/how-can-i-store-and-print-the-top-20-feature-names-and-scores
+https://stackoverflow.com/questions/34889110/random-forest-with-gridsearchcv-error-on-param-grid
+https://www.analyticsvidhya.com/blog/2015/09/naive-bayes-explained/
+https://www.analyticsvidhya.com/blog/2015/06/tuning-random-forest-model/
+https://www.analyticsvidhya.com/blog/2015/12/improve-machine-learning-results/
+https://stackoverflow.com/questions/30102973/how-to-get-best-estimator-on-gridsearchcv-random-forest-classifier-scikit
+
+
+
+
+
